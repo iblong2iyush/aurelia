@@ -11,20 +11,64 @@
         "warehouse_id": 7,
         "aisles": [{
                     "display_name": "Indian Grocery",
-                    "id": 212,
-                    "name": "Indian Grocery",
+                    "department_id": 213,
+                    "id":101,
+                    "name": "Indian",
                     "rank_offset": 7,
                     "sort_order": 15,
                     "visible": true,
-                    "warehouse_id": 7
+                    "warehouse_id": 7,
+                     "aisles": [{
+                                    "display_name": "Spices",
+                                    "department_id": 101,
+                                    "id":201,
+                                    "name": "spices",
+                                    "rank_offset": 7,
+                                    "sort_order": 15,
+                                    "visible": true,
+                                    "warehouse_id": 7
+                     }, {
+                                        "display_name":"Flour",
+                                        "department_id": 101,
+                                        "id": 202,
+                                        "name": "flour",
+                                        "rank_offset": 50,
+                                        "visible": true
+                                    }, {
+                                        "display_name":"Sugar",
+                                        "department_id": 101,
+                                        "id": 203,
+                                        "name": "sugar",
+                                        "rank_offset": 30,
+                                        "visible": true
+                                    }]
                 }, {
                     "display_name": "International Grocery",
-                    "department_id": 213,
-                    "id": 1452,
-                    "name": "International Grocery",
+                    "department_id": 212,
+                    "id": 102,
+                    "name": "International",
                     "rank_offset": 30,
                     "visible": true,
-                    "warehouse_id": 7
+                    "warehouse_id": 7,
+                     "aisles": [{
+                                    "display_name": "Soup",
+                                    "department_id": 102,
+                                    "id":301,
+                                    "name": "soup",
+                                    "rank_offset": 7,
+                                    "sort_order": 15,
+                                    "visible": true,
+                                    "warehouse_id": 7
+                                    
+                                        
+                                    }, {
+                                        "display_name":"Pasta",
+                                        "department_id": 102,
+                                        "id": 302,
+                                        "name": "pasta",
+                                        "rank_offset": 50,
+                                        "visible": true
+                                }]
                 }, {
                             "display_name": "Fresh Fruits",
                             "id": 212,
@@ -44,30 +88,14 @@
                 }, {
                             "display_name": "Oil, Vinegar & Sauces",
                             "id": 212,
-                            "name": "Oil, Vinegar & Sauces",
-                            "rank_offset": 7,
-                            "sort_order": 15,
-                            "visible": true,
-                            "warehouse_id": 7
-                }, {
-                            "display_name": "Ready to Eat/Cook",
-                            "id": 212,
-                            "name": "Ready to Eat/Cook",
-                            "rank_offset": 7,
-                            "sort_order": 15,
-                            "visible": true,
-                            "warehouse_id": 7
-                }, {
-                            "display_name": "Appetisers & Snacks",
-                            "id": 212,
-                            "name": "Jams,Honey & Spreads",
+                            "name": "oil",
                             "rank_offset": 7,
                             "sort_order": 15,
                             "visible": true,
                             "warehouse_id": 7
                 }]
-    },	
-	{
+    },  
+    {
         "display_name": "Dairy & Eggs",
         "icon" : "fa fa-leaf fa-fw",
         "class" : "hidden-xs hidden-sm",
@@ -78,26 +106,29 @@
         "visible": true,
         "warehouse_id": 2,
         "aisles": [{
+            "display_name":"Paneer & Butter",
             "department_id": 52,
             "id": 619,
-            "name": "Packaged Cheese & Butter",
+            "name": "cheese",
             "rank_offset": 60,
             "visible": true
         }, {
+            "display_name":"Milk & Curd",
             "department_id": 52,
             "id": 463,
-            "name": "Milk,Cream & Yoghurt",
+            "name": "milk",
             "rank_offset": 20,
             "visible": true
         }, {
+            "display_name":"Eggs",
             "department_id": 52,
             "id": 414,
-            "name": "Eggs",
+            "name": "eggs",
             "rank_offset": 50,
             "visible": true
         }]
     },
-	{
+    {
         "display_name": "Bakery",
         "icon" : "fa fa-coffee fa-fw",
         "class" : "hidden-xs",
@@ -108,44 +139,30 @@
         "visible": true,
         "warehouse_id": 3,
         "aisles": [{
+            "display_name":"Chocolates",
             "department_id": 91,
             "id": 3004,
-            "name": "Breakfast Bakery",
+            "name": "chocolates",
             "rank_offset": 40,
             "visible": true
         }, {
-            "department_id": 91,
-            "id": 3004,
-            "name": "Cookies",
-            "rank_offset": 40,
-            "visible": true
-        }, {
+            "display_name":"Biscuits",
             "department_id": 91,
             "id": 594,
-            "name": "Bread,Buns & Rolls",
+            "name": "biscuits",
             "rank_offset": 10,
             "visible": true
         }, {
-            "department_id": 91,
-            "id": 595,
-            "name": "Buns & Rolls",
-            "rank_offset": 30,
-            "visible": true
-        }, {
-            "department_id": 91,
-            "id": 986,
-            "name": "Deserts & Pudding",
-            "rank_offset": 20,
-            "visible": true
-        }, {
-            "department_id": 91,
-            "id": 1352,
-            "name": "Confectionery",
-            "rank_offset": 50,
-            "visible": true
+            "display_name": "Chips",
+            "id": 212,
+            "name": "chips",
+            "rank_offset": 7,
+            "sort_order": 15,
+            "visible": true,
+            "warehouse_id": 7
         }]
     },
-	{
+    {
         "display_name": "Beverages",
         "icon" : "fa fa-glass fa-fw",
         "class" : "hidden-xs hidden-md hidden-sm",
@@ -156,44 +173,44 @@
         "visible": true,
         "warehouse_id": 7,
         "aisles": [{
-            "department_id": 213,
-            "id": 1454,
-            "name": "Soft Drinks",
-            "rank_offset": 60,
-            "visible": true
-        }, {
+            "display_name":"Refrigerated Juice",
             "department_id": 213,
             "id": 1491,
-            "name": "Refrigerated Juice",
+            "name": "juice",
             "rank_offset": 50,
             "visible": true
         }, {
+            "display_name":"Water & Sparkling Water",
             "department_id": 213,
             "id": 1455,
-            "name": "Water & Sparkling Water",
+            "name": "water",
             "rank_offset": 70,
             "visible": true
-        }, {
-            "department_id": 213,
-            "id": 2780,
-            "name": "",
-            "rank_offset": 80,
-            "visible": true
-        }, {
+        }, {    
+            "display_name":"Energy,Sports & Powdered Drinks",
             "department_id": 213,
             "id": 1456,
-            "name": "Energy,Sports & Powdered Drinks",
+            "name": "energydrinks",
             "rank_offset": 40,
             "visible": true
         }, {
+        
+            "display_name":"Tea",
             "department_id": 213,
             "id": 1453,
-            "name": "Tea & Coffee",
+            "name": "tea",
+            "rank_offset": 10,
+            "visible": true
+        }, {
+            "display_name":"Coffee",
+            "department_id": 213,
+            "id": 1453,
+            "name": "coffee",
             "rank_offset": 10,
             "visible": true
         }]
     },
-	{
+    {
         "display_name": "More",
         "icon" : "fa fa-ellipsis-v fa-fw",
         "id": 213,
@@ -214,20 +231,67 @@
             "warehouse_id": 7,
             "aisles": [{
                 "display_name": "Indian Grocery",
+                "department_id":213,
                 "id": 212,
-                "name": "Indian Grocery",
+                "name": "Indian",
                 "rank_offset": 7,
                 "sort_order": 15,
                 "visible": true,
-                "warehouse_id": 7
+                "warehouse_id": 7,
+                 "aisles": [{
+                                    "display_name": "Spices",
+                                    "department_id": 101,
+                                    "id":201,
+                                    "name": "spices",
+                                    "rank_offset": 7,
+                                    "sort_order": 15,
+                                    "visible": true,
+                                    "warehouse_id": 7
+                                    }, {
+                                        "display_name":"Flour",
+                                        "department_id": 101,
+                                        "id": 202,
+                                        "name": "flour",
+                                        "rank_offset": 50,
+                                        "visible": true
+                                    }, {
+                                        "display_name":"Sugar",
+                                        "department_id": 101,
+                                        "id": 203,
+                                        "name": "sugar",
+                                        "rank_offset": 30,
+                                        "visible": true
+                                    }]
+
+                
             }, {
                 "display_name": "International Grocery",
                 "department_id": 213,
-                "id": 1452,
-                "name": "International Grocery",
+                "id": 301,
+                "name": "International",
                 "rank_offset": 30,
                 "visible": true,
-                "warehouse_id": 7
+                "warehouse_id": 7,
+                 "aisles": [{
+                                    "display_name": "Soup",
+                                    "department_id": 102,
+                                    "id":301,
+                                    "name": "soup",
+                                    "rank_offset": 7,
+                                    "sort_order": 15,
+                                    "visible": true,
+                                    "warehouse_id": 7
+                                    
+                                        
+                                    }, {
+                                        "display_name":"Pasta",
+                                        "department_id": 102,
+                                        "id": 302,
+                                        "name": "pasta",
+                                        "rank_offset": 50,
+                                        "visible": true
+                                }]
+                
             }, {
                 "display_name": "Fresh Fruits",
                 "id": 212,
@@ -247,23 +311,15 @@
             }, {
                 "display_name": "Oil, Vinegar & Sauces",
                 "id": 212,
-                "name": "Oil, Vinegar & Sauces",
+                "name": "oil",
                 "rank_offset": 7,
                 "sort_order": 15,
                 "visible": true,
                 "warehouse_id": 7
             }, {
-                "display_name": "Ready to Eat/Cook",
+                "display_name": "Jams,Honey & Spreads",
                 "id": 212,
-                "name": "Ready to Eat/Cook",
-                "rank_offset": 7,
-                "sort_order": 15,
-                "visible": true,
-                "warehouse_id": 7
-            }, {
-                "display_name": "Appetisers & Snacks",
-                "id": 212,
-                "name": "Jams,Honey & Spreads",
+                "name": "jam",
                 "rank_offset": 7,
                 "sort_order": 15,
                 "visible": true,
@@ -281,18 +337,21 @@
                 "visible": true,
                 "warehouse_id": 2,
                 "aisles": [{
+                    "display_name":"Cheese",
                     "department_id": 52,
                     "id": 619,
-                    "name": "Packaged Cheese & Butter",
+                    "name": "cheese",
                     "rank_offset": 60,
                     "visible": true
                 }, {
+                    "display_name":"Milk & Curd",
                     "department_id": 52,
                     "id": 463,
-                    "name": "Milk,Cream & Yoghurt",
+                    "name": "Milk",
                     "rank_offset": 20,
                     "visible": true
                 }, {
+                    "display_name":"Eggs",
                     "department_id": 52,
                     "id": 414,
                     "name": "Eggs",
@@ -311,39 +370,25 @@
                 "visible": true,
                 "warehouse_id": 3,
                 "aisles": [{
+                    "display_name": "Cookies",
                     "department_id": 91,
                     "id": 3004,
-                    "name": "Breakfast Bakery",
+                    "name": "cookies",
                     "rank_offset": 40,
                     "visible": true
                 }, {
-                    "department_id": 91,
-                    "id": 3004,
-                    "name": "Cookies",
-                    "rank_offset": 40,
-                    "visible": true
-                }, {
-                    "department_id": 91,
-                    "id": 594,
-                    "name": "Bread,Buns & Rolls",
-                    "rank_offset": 10,
-                    "visible": true
-                }, {
-                    "department_id": 91,
-                    "id": 595,
-                    "name": "Buns & Rolls",
-                    "rank_offset": 30,
-                    "visible": true
-                }, {
+
+                    "display_name": "Desserts & Pudding",
                     "department_id": 91,
                     "id": 986,
-                    "name": "Deserts & Pudding",
+                    "name": "dessert",
                     "rank_offset": 20,
                     "visible": true
                 }, {
+                    "display_name": "Confectionery",
                     "department_id": 91,
                     "id": 1352,
-                    "name": "Confectionery",
+                    "name": "confectionery",
                     "rank_offset": 50,
                     "visible": true
                 }]
@@ -358,209 +403,76 @@
                 "sort_order": 16,
                 "visible": true,
                 "warehouse_id": 7,
-                "aisles": [{
-								"department_id": 213,
-								"id": 1454,
-								"name": "Soft Drinks",
-								"rank_offset": 60,
-								"visible": true
-							}, {
-								"department_id": 213,
-								"id": 1491,
-								"name": "Refrigerated Juice",
-								"rank_offset": 50,
-								"visible": true
-							}, {
-								"department_id": 213,
-								"id": 1455,
-								"name": "Water & Sparkling Water",
-								"rank_offset": 70,
-								"visible": true
-							}, {
-								"department_id": 213,
-								"id": 2780,
-								"name": "",
-								"rank_offset": 80,
-								"visible": true
-							}, {
-								"department_id": 213,
-								"id": 1456,
-								"name": "Energy,Sports & Powdered Drinks",
-								"rank_offset": 40,
-								"visible": true
-							}, {
-								"department_id": 213,
-								"id": 1453,
-								"name": "Tea & Coffee",
-								"rank_offset": 10,
-								"visible": true
-							}]
+                "aisles": [ {
+                                "display_name":"Refrigerated Juice",
+                                "department_id": 213,
+                                "id": 1491,
+                                "name": "juice",
+                                "rank_offset": 50,
+                                "visible": true
+                            }, {
+                                "display_name": "Water & Sparkling Water",
+                                "department_id": 213,
+                                "id": 1455,
+                                "name": "water",
+                                "rank_offset": 70,
+                                "visible": true
+                            }, {
+                                "display_name": "Energy,Sports & Powdered Drinks",
+                                "department_id": 213,
+                                "id": 1456,
+                                "name": "energydrinks",
+                                "rank_offset": 40,
+                                "visible": true
+                            }, {
+
+                                "display_name": "Tea",
+                                "department_id": 213,
+                                "id": 1453,
+                                "name": "tea",
+                                "rank_offset": 10,
+                                "visible": true
+                            },  
+                                 {
+                                "display_name": "Coffee",
+                                "department_id": 213,
+                                "id": 1453,
+                                "name": "coffee",
+                                "rank_offset": 10,
+                                "visible": true
+                            }]
             }, {
-				"display_name": "Personal Care",
-				"id": 212,
-				"name": "Personal Care",
-				"rank_offset": 7,
-				"sort_order": 15,
-				"visible": true,
-				"warehouse_id": 7,
-				"aisles": [{
-								"department_id": 212,
-								"id": 2708,
-								"name": "Hair care",
-								"rank_offset": 100,
-								"visible": true
-							}, {
-								"department_id": 212,
-								"id": 1448,
-								"name": "Facial care",
-								"rank_offset": 50,
-								"visible": true
-							}, {
-								"department_id": 212,
-								"id": 1450,
-								"name": "First Aid",
-								"rank_offset": 30,
-								"visible": true
-							}, {
-								"department_id": 212,
-								"id": 1446,
-								"name": "Vitamis & Supplements",
-								"rank_offset": 20,
-								"visible": true
-							}, {
-								"department_id": 212,
-								"id": 1449,
-								"name": "Deodarants",
-								"rank_offset": 40,
-								"visible": true
-							}, {
-								"department_id": 212,
-								"id": 1445,
-								"name": "Eye & Ear Care",
-								"rank_offset": 10,
-								"visible": true
-							}, {
-								"department_id": 212,
-								"id": 1447,
-								"name": "Air Freshners & Candles",
-								"rank_offset": 60,
-								"visible": true
-						   }]
-				}, {
-                    "display_name": "Household",
-					"department_id": 213,
-					"id": 1452,
-					"name": "Household",
-					"rank_offset": 30,
-					"visible": true,
-                    "aisles": [{
-                                    "department_id": 212,
-                                    "id": 2708,
-                                    "name": "Cleaning Products",
-                                    "rank_offset": 100,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1448,
-                                    "name": "Utensils",
-                                    "rank_offset": 50,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1450,
-                                    "name": "Laundry",
-                                    "rank_offset": 30,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1446,
-                                    "name": "Accessories",
-                                    "rank_offset": 20,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 2708,
-                                    "name": "Dish Detergents",
-                                    "rank_offset": 100,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1448,
-                                    "name": "Food Storage",
-                                    "rank_offset": 50,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1450,
-                                    "name": "Kitchen Supplies",
-                                    "rank_offset": 30,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1446,
-                                    "name": "Paper Goods",
-                                    "rank_offset": 20,
-                                    "visible": true
-                                }]
-				}, {
-                    "display_name": "Meat & Seafood",
-                    "department_id": 213,
-                    "id": 1452,
-                    "name": "Meat & Seafood",
-                    "rank_offset": 30,
-                    "visible": true,
-                    "aisles": [{
-                                    "department_id": 212,
-                                    "id": 2708,
-                                    "name": "Poultry Counter",
-                                    "rank_offset": 100,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1448,
-                                    "name": "Seafood Counter",
-                                    "rank_offset": 50,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1450,
-                                    "name": "Packaged Meat",
-                                    "rank_offset": 30,
-                                    "visible": true
-                                }]
-                }, {
-                    "display_name": "Babies & Pets",
-                    "department_id": 213,
-                    "id": 1452,
-                    "name": "Babies & Pets",
-                    "rank_offset": 30,
-                    "visible": true,
-                    "aisles": [{
-                                    "department_id": 212,
-                                    "id": 2708,
-                                    "name": "Baby Accessories",
-                                    "rank_offset": 100,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1448,
-                                    "name": "Baby Bath & Body Care",
-                                    "rank_offset": 50,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1450,
-                                    "name": "Baby Diapers",
-                                    "rank_offset": 30,
-                                    "visible": true
-                                }, {
-                                    "department_id": 212,
-                                    "id": 1450,
-                                    "name": "Cat & Dogfood",
-                                    "rank_offset": 30,
-                                    "visible": true
-                                }]
-                }, {
+                "display_name": "Personal Care",
+                "id": 212,
+                "name": "PersonalCare",
+                "rank_offset": 7,
+                "sort_order": 15,
+                "visible": true,
+                "warehouse_id": 7,
+                "aisles": [{    "display_name": "Hair care",
+                                "department_id": 212,
+                                "id": 2708,
+                                "name": "haircare",
+                                "rank_offset": 100,
+                                "visible": true
+                            }, {
+                                "display_name": "Facial care",
+                                "department_id": 212,
+                                "id": 1448,
+                                "name": "facialcare",
+                                "rank_offset": 50,
+                                "visible": true
+                            }, {
+                                "display_name": "Household",
+                                "department_id": 212,
+                                "id": 1449,
+                                "name": "household",
+                                "rank_offset": 40,
+                                "visible": true
+                            }]
+                },
+                
+                 {
                 "display_name": "Popular",
                 "icon" : "fa fa-glass fa-fw",
                 "class" : "hidden-lg hidden-md hidden-sm",
@@ -585,4 +497,3 @@
             }]
     }
 ]
-	
