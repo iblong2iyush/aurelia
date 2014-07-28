@@ -1,0 +1,84 @@
+<div class="row">
+    <ul class="thumbnails">
+        <li class="col-lg-3 col-sm-4 col-xs-6 animate" ng-repeat="product in store.favorites">
+            <div class="thumbnail" title="{{product.description}}" data-ng-show="!{{product.fav}}">
+                <center>
+                    <div class="outofstock" data-ng-show="{{product.quantity<5}}">
+                        <span class="text-danger">Out of Stock</span>
+                    </div>
+                    <img ng-src="images/Store/Favorites/{{product.name}}.jpg" ng-alt="{{product.name}}" class="img-responsive" width="200px" height="200px"/>
+                </center>
+                <div class="caption text-center">
+                    <span class="pn">{{product.name}}</span>
+                </div>
+                <div style="position:absolute;bottom: 41px;">
+                    <span>{{product.price | currency:"&#8377;"}}&nbsp;</span>
+                </div>
+                <div style="position: absolute;bottom: 41px;right: 5px">
+                    <a class="btn btn-success" ng-click="cart.addItem(product.sku, product.name, product.price, 1)">+</a>
+                </div>
+                <!-- Hover content -->
+                <table class="table details bordered hidden-sm hidden-xs">
+                    <!-- Calories -->
+                    <tr>
+                        <td><b>Calorie</b></td>
+                        <td><b>{{product.Calorie}}</b></td>
+                    </tr>
+                    <!-- Details -->
+                    <tr>
+                        <td>Protein</td><td>{{product.Protein}}g</td>
+                    </tr>
+                    <tr>
+                        <td>Carb</td><td>{{product.Carb}}g</td>
+                    </tr>
+                    <tr>
+                        <td>Fat</td><td>{{product.Fat}}g</td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!--<pre>$location.path() = {{$location.path()}}</pre>-->
+<!--<pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>-->
+<!--<pre>$route.current.params = {{$route.current.params}}</pre>-->
+<!--<pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>-->
+<!--<pre>$routeParams = {{$routeParams}}</pre>-->
+<!--<pre>$routeParams.Department = {{$routeParams.Department}}</pre>-->
+<!--<pre>$routeParams.Category = {{$routeParams.Category}}</pre>-->
+
+<style>
+    .outofstock {
+        position: absolute;
+        background: rgba(255,0,0,.7);
+        top: 5px;
+        width: 100%;
+        color: #ffffff;
+    }
+    .thumbnail {
+        position: relative;
+        overflow:hidden;
+    }
+    .details {
+        position: absolute;
+        top: 30px;
+        left: 25px;
+        width: 80%;
+        height: 60%;
+        background: rgba(0,0,0,.7);
+        color: #ffffff !important;
+        -webkit-transition: opacity 200ms ease-out; /* For Safari 3.1 to 6.0 */
+        -moz-transition: opacity 200ms ease-out;
+        -o-transition: opacity 200ms ease-out;
+        transition: opacity 200ms ease-out;
+        opacity: 0;
+    }
+    .details:hover {
+        -webkit-transition: opacity 250ms ease-in; /* For Safari 3.1 to 6.0 */
+        -moz-transition: opacity 250ms ease-in;
+        -o-transition: opacity 250ms ease-in;
+        transition: opacity 250ms ease-in;
+        opacity: 1;
+    }
+</style>

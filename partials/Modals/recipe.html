@@ -1,0 +1,54 @@
+<!-- Modal -->
+<div class="modal fade">
+    <div class="modal-dialog"><div class="modal-header">
+    <h1>This is the title</h1>
+    </div>
+    <div class="modal-body">
+        Hi, I'm a modal!
+    </div></div>
+</div>
+<!--<div ng-repeat="image in images">-->
+    <!--<div class="modal fade" id="{{image.name}}" tabindex="-1" role="dialog" aria-labelledby="recipeModal" aria-hidden="true" data-keyboard="true" data-backdrop="true">-->
+        <!--<div class="modal-dialog" style="font-size: 18px;" >-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="height: 20px;width: 20px">&times;</button>-->
+                    <!--<ul class="nav nav-tabs">-->
+                        <!--<span style="font-size: 18px;font-weight: 400;padding-right: 20px;padding-top: 5px" class="pull-left"><b>{{image.name}}</b></span>-->
+                        <!--<li class="active"><a href="/store/recipes/#recip" data-toggle="tab">Recipe</a></li>-->
+                        <!--<li><a href="/store/recipes/#ingred" data-toggle="tab">Ingredients</a></li>-->
+                    <!--</ul>-->
+                    <!--<div class="modal-body">-->
+                        <!--&lt;!&ndash; Tab panes &ndash;&gt;-->
+                        <!--<div class="tab-content">-->
+                            <!--<div class="tab-pane fade in active" id="recip">-->
+                                <!--<img ng-src="images/Store/Recipes/{{image.name}}.jpg" alt="{{image.name}}" class="img img-responsive pull-left img-rounded span4" width="100px"/>-->
+                                <!--{{image.description}}-->
+                            <!--</div>-->
+                            <!--<div class="tab-pane fade" id="ingred">-->
+                                <!--<table class="table" style="">-->
+                                    <!--&lt;!&ndash; header &ndash;&gt;-->
+                                    <!--<tr class="well">-->
+                                        <!--<td><b>#</b></td>-->
+                                        <!--<td><b>Item</b></td>-->
+                                        <!--<td class="tdCenter"><b>Quantity</b></td>-->
+                                        <!--<td class="tdRight"><b>Price</b></td>-->
+                                        <!--<td><button class="btn btn-warning btn-small" ng-click="cart.addItem(product.sku, product.name, product.price, 1)" style="margin-top: 0" title="Add all to Cart"><i class="fa fa-plus fa-fw"></i></button></td>-->
+                                    <!--</tr>-->
+
+                                    <!--<tr ng-repeat="ingrd in image.ingredients">-->
+                                        <!--<td><img ng-src="images/Store/Recipes/Ingredients/{{ingrd.name}}.jpg" alt="image" width="50px"></td>-->
+                                        <!--<td style="vertical-align: middle">{{ingrd.name}}</td>-->
+                                        <!--<td style="vertical-align: middle">{{ingrd.quantity}}</td>-->
+                                        <!--<td style="vertical-align: middle">{{ingrd.price | currency:"&#8377;"}}</td>-->
+                                        <!--<td style="vertical-align: middle"><button class="btn btn-success btn-small" ng-click="cart.addItem(product.sku, product.name, product.price, 1)" style="margin-top: 0" title="Add to Cart"><i class="fa fa-plus fa-fw"></i></button></td>-->
+                                    <!--</tr>-->
+                                <!--</table>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

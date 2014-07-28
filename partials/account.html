@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <img src="images/user.jpg" class="img-responsive img-polaroid span4">
+        <div style="position: absolute;left: 12%;top: 350px">
+            <a href="#/store/account">
+                <i class="fa fa-facebook-square fa-2x"></i>
+            </a>
+
+            <a href="#/store/account">
+                <i class="fa fa-github-square fa-2x"></i>
+            </a>
+
+            <a href="#/store/account">
+                <i class="fa fa-linkedin-square fa-2x"></i>
+            </a>
+
+            <a href="#/store/account">
+                <i class="fa fa-twitter-square fa-2x"></i>
+            </a>
+
+            <a href="#/store/account">
+                <i class="fa fa-google-plus fa-2x"></i>
+            </a>
+        </div>
+        <form class="form-horizontal span8">
+            <fieldset>
+                <div class="control-group">
+                    <div class="control-group">
+                        <h4>Personal Details</h4><hr>
+                    </div>
+                    <div class="control-group name">
+                        <label class="control-label" for="name">Name</label>
+                        <div class="controls">
+                            <input type="text" name="street_address" placeholder="Ayush K. Singh">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label phone-control-label" for="phone">Phone</label>
+                        <label class="controls">
+                            <input id="phone" type="tel" name="phone" required="required" placeholder="So we can SMS order status" value="">
+                        </label>
+                    </div>
+                    <div class="control-group">
+                        <h4>Address</h4><hr>
+                    </div>
+                    <div class="inline-address">
+                        <div class="address-type control-group">
+                            <label class="control-label" for="address_type">Type of Location&nbsp;</label>
+                            <div class="controls">
+                                <label class="inline radio">
+                                    <input class="address_type_option" type="radio" name="address_type" value="residential" required="required" checked="">
+                                    Residential
+                                </label>
+                                <label class="inline radio">
+                                    <input class="address_type_option" type="radio" name="address_type" value="business" required="required">
+                                    Business
+                                </label>
+                            </div>
+                        </div>
+                        <div class="control-group street-address">
+                            <label class="control-label" for="street_address">Street Address</label>
+                            <div class="controls">
+                                <input type="text" name="street_address" placeholder="Street Address">
+                            </div>
+                        </div>
+                        <div class="apt-number control-group">
+                            <label class="control-label" for="apartment_number">Apartment Number</label>
+                            <div class="controls">
+                                <input type="text" name="apartment_number" placeholder="Apt # (optional)">
+                            </div>
+                        </div>
+                        <div class="control-group zip-code">
+                            <label class="control-label" for="zip_code">Zip Code</label>
+                            <div class="controls">
+                                <input type="text" name="zip_code" placeholder="Zip Code" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="buttons clearfix">
+                <div class="pull-right">
+                    <button class="btn btn-inline-address btn-large btn-success pull-right" data-loading-text="Saving...">Save</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div> 

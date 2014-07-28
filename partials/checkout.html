@@ -1,0 +1,112 @@
+<div class="row-fluid">
+    <div class="centered">
+        <h1 class="float-left">
+            <span class="checkout-state selected" style="color: #006dcc">Delivery</span>
+        <span class="muted next">
+          <i class="fa fa-chevron-right"></i>
+        </span>
+            <span class="checkout-state">Payment</span>
+        <span class="muted next">
+          <i class="fa fa-chevron-right"></i>
+        </span>
+            <span class="checkout-state">Replacements</span>
+        </h1>
+    </div>
+</div>
+<div class="row-fluid">
+    <legend>Please fill the Form as follows</legend>
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="control-group">
+                <label class="address-control-label control-label">
+                    Address
+                </label>
+                <div class="inline-address">
+                    <div class="address-type control-group">
+                        <label class="control-label" for="address_type">Type of Location&nbsp;</label>
+                        <div class="controls">
+                            <label class="inline radio">
+                                <input class="address_type_option" type="radio" name="address_type" value="residential" required="required" checked="">
+                                Residential
+                            </label>
+                            <label class="inline radio">
+                                <input class="address_type_option" type="radio" name="address_type" value="business" required="required">
+                                Business
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group street-address">
+                        <label class="control-label" for="street_address">Street Address</label>
+                        <div class="controls">
+                            <input type="text" name="street_address" placeholder="Street Address">
+                        </div>
+                    </div>
+                    <div class="apt-number control-group">
+                        <label class="control-label" for="apartment_number">Apartment Number</label>
+                        <div class="controls">
+                            <input type="text" name="apartment_number" placeholder="Apt # (optional)">
+                        </div>
+                    </div>
+                    <div class="control-group zip-code">
+                        <label class="control-label" for="zip_code">Zip Code</label>
+                        <div class="controls">
+                            <input type="text" name="zip_code" placeholder="Zip Code" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="address-note control-group">
+                        <label class="control-label" for="note">Note</label>
+                        <div class="controls">
+                            <textarea type="text" name="note" placeholder="e.g. your door code (optional)" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-inline-address btn-large btn-success pull-right">Save</button>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label phone-control-label" for="phone">Phone</label>
+                <label class="controls">
+                    <input id="phone" type="tel" name="phone" required="required" placeholder="So we can SMS order status" value="">
+                </label>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="order_special_instructions">Delivery Instructions</label>
+                <div class="controls">
+                    <textarea id="order_special_instructions" name="special_instructions" rows="3" placeholder="Call me when you arrive"></textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label delivery-control-label">
+                    Options
+                </label>
+                <div class="controls">
+                    <div class="alert alert-info">
+                        Please save your address to view delivery options
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="alcohol-control-label control-label">Valid ID</div>
+                <label class="controls">
+                    <input id="alcohol_ok" type="checkbox" name="alcohol_ok">
+                    I agree that an adult over the age of 21 with valid government ID will be present to accept this order.
+                    <br>
+                    <span class="muted" style="margin-top: 5px">Your shopper will ask to see ID regardless of your age.</span>
+                </label>
+            </div>
+        </fieldset>
+        <div class="buttons clearfix">
+            <div class="pull-left">
+                <a class="btn btn-back btn-large btn-subtle" href="#">
+                    <i class="icon-chevron-left"></i>
+                    Back
+                </a>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-large btn-next btn-primary" data-loading-text="Loading...">
+                    Next
+                    <i class="icon-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

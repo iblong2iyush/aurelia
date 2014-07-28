@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--
+                           ___	  _	  _    ___ 	   ___     _		_	   ___
+                          /   \  | | | |  | _ \	  |  _|   | |	   | |    /	  \
+                          | - |  | |_| |  |   /	  ||-_    | |_	   | |    | - |
+                          |_|_|  \_____/  |_|_\	  |___|	  |___|	   |_|    |_|_|
+                        _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
+                        "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
+@iBlong2iYush
+-->
+<html lang="en" ng-app="storeApp" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>aurelia</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap3.min.css"/>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/main_store.css"/>
+    <link rel="stylesheet" type="text/css" href="css/anim.css"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600"/>
+
+    <!-- Le scripts -->
+    <script src="js/jquery.min.js"></script>    
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/ext.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/store/app.js"></script>
+    <script src="js/store/controller.js"></script>
+    <script src="js/store/store.js"></script>
+    <script src="js/store/product.js"></script>
+    <script src="js/store/shoppingCart.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body style="background-image: url('images/gplaypattern.png');background-repeat: repeat;" ng-controller="storeController">
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a href="#/" onclick="$('.secondary-navbar').show(500);"><img src="images/logo-black.png" class="brand-img img-responsive hidden-xs" width="170px"/></a>
+            <div class="dropdown pull-left hidden-sm hidden-xs" id="header" style="cursor: pointer">
+                <div style="padding: 5px 10px 0 10px" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="250">
+                    <span style="font-weight: bold ;">Whole Foods</span><br>Dehradun<i class="fa fa-caret-down pull-right"></i>
+                </div>
+                <ul class="dropdown-menu" id="navigation"style="width: 300px">
+                    <li>
+                        <a href='#easyday'>
+                            <img src="images/easyDay-logo.png" alt="easyDay" width="80px"/>
+                            <span class='muted pull-right' style="top: 5px">Best Value!</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#bigbazar'>
+                            <img src="images/BigBazaar-logo.png" alt="BigBazar" width="80px"/>
+                            <span class='muted pull-right'>National Brands</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#suvidha'>
+                            <img src="images/Suvidha-logo.png" alt="Suvidha" width="80px">
+                            <span class='muted pull-right' style="top: 50px">Organic & Premium</span>
+                        </a>
+                    </li>
+                    <li class='divider'></li>
+                    <li ng-controller="switchCtrl">
+                        <div id="switch-me">
+                            <a class="switch">
+                                <span class='pull-left muted' style="padding-left: 5px">Shopping in  <span ng-bind="zone"></span></span>
+                                <span class='link pull-right' style="padding-right: 5px"><i class="fa fa-anchor"></i>Switch Zone</span>
+                            </a>
+                        </div>
+                        <div class="hide" id="switch-zone">
+                            <select class='zone' ng-model="zone" name='zone_id' style="width: 280px;margin-left: 10px;font-size:18px;line-height:16px;font-family: "Roboto Slab", sans-serif">
+                            <optgroup label='Dehradun'>
+                                <option value='Rajpur Road' ng-selected="selected">Rajpur Road</option>
+                                <option value='Vasant Vihar'>Vasant Vihar</option>
+                                <option value='Clement Town'>Clement Town</option>
+                            </optgroup>
+                            <optgroup label='Delhi'>
+                                <option value='South Ex'>South Ex</option>
+                                <option value='Model Town'>Model Town</option>
+                            </optgroup>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class='hide-on-checkout navbar-search' data-ng-controller="SrchCtrl">
+                    <input
+                            type="search"
+                            ng-model="search"
+                            placeholder="&#xf002; Click Here or Press '/' to Search"
+                            class="search-term search-query hasclear form-control"
+                            style="
+                                   width: 200%;
+                                   font-family: FontAwesome, 'Open Sans';
+                                   font-size: 18px;
+                                   margin: 4px 5px -7px 5px;
+                                   padding: 5px 5px;
+                                   vertical-align: middle;"
+                            ng-minlength="3"
+                            ng-pattern="/^[A-Za-z]+$/"
+                            ng-focus="focus=true"
+                            ng-blur="focus=false"
+                            docs-search-input
+                            autocomplete="off"
+                            autofocus required />
+                    <span class="clearer fa fa-times-circle-o fa-2x form-control-feedback hidden-xs hidden-sm" style="color: darkgray;position: absolute;top:4px;left:196.5%;cursor: hand" ng-show="search.length" ng-click="search = ''"></span>
+                <table class="table table-bordered search-table table-striped" style="background-color:#f5f5f5;position:absolute; z-index:999;top:35px;width: 400px" ng-show="search" ng-click="search = ''">
+                    <tr class="animatelist" data-ng-repeat="keyword in keywords | filter:search" style="list-style: none">
+                        <td>
+                            <a data-ng-href="#/store/{{keyword.Department}}/{{keyword.Category}}" style="font-size: 16px">
+                                {{keyword.title}}
+                            </a>
+                            <span class="muted">
+                                &nbsp;in&nbsp;
+                            </span>
+                            {{keyword.Department}}
+                            <div class="pull-right"><div class="input-append">
+                                <input class="text-center" type="tel" style="width: 20px;height: 13px" ng-model="count"/>
+                                <button class="btn btn-warning btn-small" ng-click="count = count + 1" ng-init="count=1"><i class="fa fa-fw fa-plus"></i></button>
+                            </div>
+                            <button class="btn btn-success btn-small" style="margin-top: -10px !important">Dummy Add</button></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <a href="#/faq" class="hidden-sm hidden-xs hidden-md"><button class="btn btn-large btn-info" style="margin-left: 30%;margin-top:7px;position: relative;font: open_sansbold">FAQ</button></a>
+            <div class="dropdown hidden-xs pull-right" id="header" style="cursor: pointer;position:absolute;top:-1px;right: 2%">
+                <div style="padding: 0px 5px 0px 5px;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="250">
+                    <img src="images/user.jpg" class="img-circle img-responsive" width="53.5px"/>&nbsp;<i class="fa fa-fw fa-caret-down" style="position: absolute;right: -5px;top: 40px"></i>
+                </div>
+                <ul class="dropdown-menu" id="navigation" style="top: 55px">
+                    <li>
+                        <a href='#/store/account'>
+                            <i class='fa fa-cog fa-spin fa-fw'></i>
+                            My Account
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#/store/order_history'>
+                            <i class='fa fa-list fa-fw'></i>
+                            Order History
+                        </a>
+                    </li>
+                    <li>
+                        <a class='referral-link' data-source='menu - invite friends' href='#referrals'>
+                            <i class="fa fa-gift fa-fw"></i>
+                            Refer friends.
+                            Get <i class="fa fa-inr"></i>25.
+                        </a>
+                    </li>
+                    <li>
+                        <a class='logout' href='index.html'>
+                            <i class='fa fa-power-off fa-fw'></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar secondary-navbar" id="department-nav" ng-controller="HeadCtrl">
+    <div class="navbar-inner" id="menu">
+        <ul class="nav nav-departments nav-featured">
+            <li class="hidden-xs" data-department-id="popular">
+                <a class="" href="#/store/favorites" style="font-weight: 500">
+                    <i class="fa fa-bolt fa-fw"></i>
+                    Popular
+                </a>
+            </li>
+            <li class="highlight hidden-xs hidden-sm" id="nav_recipes" data-department-id="3-recipes">
+                <a class="" href="#/store/recipes" style="font-weight: 500">
+                    <i class="fa fa-bookmark fa-fw" style="color: #802420"></i>
+                    Recipes
+                </a>
+            </li>
+            <li class="hidden-xs hidden-sm" data-department-id="favorites">
+                <a class="" href="#/store/favorites" style="font-weight: 500">
+                    <i class="fa fa-star fa-fw"></i>
+                    Favorites
+                </a>
+            </li>
+        </ul>
+        <ul class="nav nav-departments nav-normal animate" ng-repeat="something in somethings">
+            <li class="dropdown position-me" style="display: list-item;" ng-class="something.class">
+                <a class="navbar-link dropdown-toggle" data-toggle="dropdown">
+                    <i ng-class="something.icon"></i>&nbsp;{{ something.name }}&nbsp;<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" id="navigation">
+                    <li ng-repeat="child in something.aisles" ng-if="!child.aisles.length">
+                        <a style="cursor: pointer;" ng-href="#/store/{{something.name}}/{{ child.name }}">{{ child.display_name }}</a>
+                    </li>
+                    <li class="dropdown-submenu" ng-repeat="subchild in something.aisles" ng-if="subchild.aisles.length">
+                        <a class="dropdown-toggle" style="cursor: pointer;"  ng-href="#/store/{{subchild.name}}" ng-class="subchild.class">{{ subchild.display_name }}</a>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="aislesubchild in subchild.aisles">
+                                <a style="cursor: pointer;" ng-href="#/store/{{subchild.name}}/{{ aislesubchild.name }}">{{aislesubchild.display_name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <img src="images/logo-black.png" alt="aurelia" class="img-responsive visible-xs" width="80px" style="position: absolute;top: 53px;left: 40%">
+        <div id="cart-in-nav" class="pull-right" style="padding-top: 27px;cursor: hand">
+            <div class="nav-content">
+                        <span class="cart-toggle hidden-xs" title="Click to Open Cart" style="position: relative;cursor:hand;font-size: 18px;vertical-align: middle" ng-disabled="cart.getTotalCount() < 1"><strong>{{cart.getTotalPrice() | currency:"&#8377;"}}</strong>
+                        <span class="muted hidden-xs">for</span><strong> {{cart.getTotalCount()}}&nbsp;items</strong></span>
+                <button class="btn btn-info btn-small cart-toggle hidden-xs" title="Click to Open Cart" onclick="$(this).parent().find('.cart').removeClass('hide').toggleClass('hide').toggle(250);$(this).find('.toggle-cart').toggleClass('fa-plus fa-minus')" style="margin-top: -2px;">
+                    <i class="fa fa-fw fa-plus visible-minimized toggle-cart" title="Expand cart"></i>
+                </button>
+                <button class="btn btn-success btn-small cart-toggle visible-xs" title="Click to Open Cart" onclick="$(this).parent().find('.cart').removeClass('hide').toggleClass('hide').toggle(250);$(this).find('.toggle-cart').toggleClass('fa-shopping-cart fa-minus')" style="  margin-top: 0;">
+                    {{cart.getTotalPrice() | currency:"&#8377;"}}<i class="fa fa-fw fa-shopping-cart visible-minimized toggle-cart" title="Expand cart"></i>
+                </button>
+                <div class="cart hide" style="position:absolute;z-index: 9999;right: 1%">
+                    <!-- items -->
+                    <table class="table table-bordered" style="background-color: floralwhite;">
+
+                        <!-- header -->
+                        <tr class="well">
+                            <td><b>Item</b></td>
+                            <td class="tdCenter"><b>Quantity</b></td>
+                            <td class="tdRight"><b>Price</b></td>
+                            <td><button class="btn btn-danger btn-small" ng-click="cart.clearItems()" ng-disabled="cart.getTotalCount() < 1" style="margin-top: 0"><i class="fa fa-trash-o fa-fw"></i></button></td>
+                        </tr>
+
+                        <!-- empty cart message -->
+                        <tr ng-hide="cart.getTotalCount() > 0" >
+                            <td class="tdCenter" colspan="4">
+                                Your cart is empty.
+                            </td>
+                        </tr>
+
+                        <!-- cart items -->
+                        <tr ng-repeat="item in cart.items | orderBy:'name'">
+                            <td>{{item.name}}</td>
+                            <td class="tdCenter">
+                                <div class="input-append">
+                                    <!-- use type=tel instead of  to prevent spinners -->
+                                    <input
+                                            class="text-center" type="tel"
+                                            ng-model="item.quantity"
+                                            ng-change="cart.saveItems()" style="width: 20px" disabled/>
+                                    <button
+                                            class="btn btn-success" type="button"
+                                            ng-disabled="item.quantity >= 100"
+                                            ng-click="cart.addItem(item.sku, item.name, item.price, +1)">+</button>
+                                    <button
+                                            class="btn btn-inverse" type="button"
+                                            ng-disabled="item.quantity <= 1"
+                                            ng-click="cart.addItem(item.sku, item.name, item.price, -1)">-</button>
+                                </div>
+                            </td>
+                            <td class="tdRight">{{item.price * item.quantity | currency:"&#8377;"}}</td>
+                            <td class="tdCenter" title="remove from cart">
+                                <a href="" ng-click="cart.addItem(item.sku, item.name, item.price, -10000000)">
+                                    <i class="fa fa-times fa-fw"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- footer -->
+                        <tr class="well">
+                            <td><b>Total</b></td>
+                            <td class="tdCenter"><b>{{cart.getTotalCount()}}</b><button class="btn btn-info btn-small pull-right" style="margin: 0" ng-click="showNote = ! showNote" onclick="$(this).parents().find('#note').removeClass('hide').toggleClass('hide').toggle(100);$(this).find('.note-toggle').toggleClass('fa-plus-square fa-minus-square')"><i class="fa fa-plus-square note-toggle"></i>&nbsp;Note</button> </td>
+                            <td class="tdRight"><b>{{cart.getTotalPrice() | currency:"&#8377;"}}</b></td>
+                            <td><a href="#/store/checkout" onclick="$('.secondary-navbar').hide(500);"><button title="Checkout" class="btn btn-warning btn-small" ng-disabled="cart.getTotalCount() < 1" style="margin-top: 0"><i class="fa fa-flip-horizontal fa-truck"></i></button></a></td>
+                        </tr>
+
+                        <!-- note -->
+                        <tr class="well hide" id="note" data-ng-hide="cart.getTotalCount() < 1">
+                            <td colspan="4">
+                                <textarea rows="2" cols="8" placeholder="Enter Details here.." style="font-size:20px;font-family: 'Open Sans'"></textarea><button class="btn btn-success btn-large" style="margin-top: -10px;">Add</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="row-fluid">
+        <ul class="thumbnails" style="margin-left: 5%">
+            <li class="col-sm-6 col-md-3 animate">
+                <div class="animate" ng-view></div>
+            </li>
+        </ul>
+    </div>
+
+<div class="" id="footer">
+    <ul class='nav nav-pills pull-left'>
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#/faq">FAQ</a>
+        </li>
+        <li>
+            <a href="#/blog">Blog</a>
+        </li>
+        <li>
+            <a href="#/contact">Contact</a>
+        </li>
+        <li>
+            <a href="#/privacy">Privacy</a>
+        </li>
+        <li>
+            <a href="#/terms">Terms</a>
+        </li>
+    </ul>
+    <div class='pull-right'>
+        <div class='' style="margin-right: 5px"><p class="muted credit"><img src="images/logo-black.png" width="100px"> is a Project by <a href="http://facebook.com/iblong2iyush">Ayush K. Singh</a>.</p></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.dropdown').hover(function () {
+            $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(250);
+            }, function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp(250);
+        });
+        $(".switch").click(function(e) {
+            e.preventDefault();
+            $('#switch-me').hide(200);
+            $('#switch-zone').show(200);
+            return false;
+        });
+        $(".zone").change(function(e) {
+            e.preventDefault();
+            $('#switch-zone').hide(200);
+            $('#switch-me').show(200);
+            return false;
+        });
+    });
+
+    $(document).click(function (e) {
+        e.stopPropagation();
+        var container = $(".dropdown");
+        //check if the clicked area is dropDown or not
+        if (container.has(e.target).length === 0) {
+            $('.dropdown-menu').hide(250);
+        }
+    });
+</script>
+
+<!-- Javascripts Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>	

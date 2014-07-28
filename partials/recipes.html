@@ -1,0 +1,62 @@
+<div ng-controller="ImgCtrl">
+    <div class="row">
+        <ul class="thumbnails">
+            <li class="col-lg-3 col-sm-4 col-xs-6 animate" ng-repeat="image in images | orderBy:'name' | filter:search">
+                <div class="thumbnail" style="width: 200px">
+                    <img ng-src="images/Store/Recipes/{{image.name}}.jpg" alt="{{image.name}}"/>
+                    <div class="caption text-center">
+                        <p>
+                            <a href="#" class="btn btn-primary pull-left btn-small"><i class="fa fa-fw fa-plus"></i></a>
+                            <span style="font-size: 18px;top: 50px" class="text-center">{{image.name}}</span>
+                            <a class="btn btn-default pull-right btn-small" data-toggle="modal" data-target="#{{image.name}}" ng-href="/store/recipes/#{{image.name}}"><i class="fa fa-fw fa-flask"></i></a>
+                        </p>
+                    </div>
+                    <!-- Hover content -->
+                    <table class="table details bordered">
+                        <!-- Calories -->
+                        <tr>
+                            <td><b>Calorie</b></td>
+                            <td><b>{{image.calorie}}</b></td>
+                        </tr>
+                        <!-- Details -->
+                        <tr>
+                            <td>Protein</td><td>{{image.protein}}g</td>
+                        </tr>
+                        <tr>
+                            <td>Carb</td><td>{{image.carb}}g</td>
+                        </tr>
+                        <tr>
+                            <td>Fat</td><td>{{image.fat}}g</td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+<style>
+    .thumbnail {
+        position: relative;
+        overflow:hidden;
+    }
+    .details {
+        position: absolute;
+        top: 30px;
+        left: 25px;
+        width: 80%;
+        height: 60%;
+        background: rgba(0,0,0,.7);
+        color: #ffffff !important;
+        -webkit-transition: opacity 200ms ease-out; /* For Safari 3.1 to 6.0 */
+        -moz-transition: opacity 200ms ease-out;
+        -o-transition: opacity 200ms ease-out;
+        transition: opacity 200ms ease-out;
+        opacity: 0;
+    }
+    .details:hover {
+        -webkit-transition: opacity 250ms ease-in; /* For Safari 3.1 to 6.0 */
+        -moz-transition: opacity 250ms ease-in;
+        -o-transition: opacity 250ms ease-in;
+        transition: opacity 250ms ease-in;
+        opacity: 1;
+    }
+</style>

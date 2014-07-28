@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="request" tabindex="-1" role="dialog" aria-labelledby="requestModal" aria-hidden="true" data-keyboard="true" data-backdrop="true" style="width: 400px">
+    <div class="modal-dialog" style="font-size: 18px;" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="height: 20px;width: 20px">&times;</button>
+                <h4>Can't find what your Looking for?</h4>
+            </div>
+            <form id="formname" name="formname" method="post" class="form-horizontal">
+                <div class="modal-body row-fluid">
+                    <div class="control-group"><span class="span3">Describe what you want :</span><textarea type="text" cols="50" rows="5" placeholder="Include your Preferences for Brand, size, organic, etc. Bes as specific as Possible. Your Shopper may call with questions. Shoppers cannot purchase Gift Cards or Tobacco."></textarea><br/></div>
+                    <div class="control-group"><span class="span3">Quantity :</span><input type="number" style="width: 60px"><select style="width: 150px;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif"><option>Container</option><option>Kilograms</option></select><br/></div>
+                    <span class="pull-left" ><input type="checkbox" ng-model="checked">&nbsp;I accept <a href="#/terms">Terms & Conditions</a></button></span>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group"><button type="submit" class="btn btn-success" ng-model="button" ng-disabled="!checked">Add to Cart</button>
+                        <button type="reset" class="btn btn-danger">Reset</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

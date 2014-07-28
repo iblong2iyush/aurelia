@@ -1,0 +1,73 @@
+[
+                                {
+                                    "id": "1",
+                                    "name": "Apple",
+									"price": "12"
+                                },
+                                {
+
+                                    "id": "2",
+                                    "name": "Avocado",
+									"price": "16"
+                                },
+                                {
+
+                                    "id": "3",
+                                    "name": "Banana",
+									"price": "4"
+                                },
+                                {
+
+                                    "id": "4",
+                                    "name": "Grape",
+									"price": "8"
+                                },
+                                {
+
+                                    "id": "5",
+                                    "name": "Guava",
+									"price": "6"
+                                },
+                                {
+
+                                    "id": "6",
+                                    "name": "Kiwi",
+									"price": "14"
+                                },
+                                {
+
+                                    "id": "7",
+                                    "name": "Lychee",
+									"price": "18"
+                                },
+                                {
+
+                                    "id": "8",
+                                    "name": "Mango",
+									"price": "8"
+                                },
+                                {
+
+                                    "id": "5",
+                                    "name": "Orange",
+									"price": "9"
+                                },
+                                {
+
+                                    "id": "6",
+                                    "name": "Pineapple",
+									"price": "4"
+                                },
+                                {
+
+                                    "id": "7",
+                                    "name": "Strawberry",
+									"price": "7"
+                                },
+                                {
+
+                                    "id": "8",
+                                    "name": "Watermelon",
+									"price": "4"
+                                }
+]

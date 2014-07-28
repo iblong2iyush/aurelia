@@ -1,0 +1,102 @@
+[
+                                {
+                                    "id": "1",
+                                    "price": "10",
+                                    "name": "Brussels",
+									"calorie": "90",
+									"carb": "12.4",
+									"protein": "6.3",
+									"fat": "3.9",
+									"description": "A better fibre alternative!!",
+                                    "ingredients" : [{
+                                        "name" : "Broccoli",
+                                        "price" : "23",
+                                        "quantity" : "1kg"
+                                    }, {
+                                        "name" : "Salad Dressing",
+                                        "price" : "8",
+                                        "quantity" : "200ml"
+                                    }, {
+                                        "name" : "Olive Oil",
+                                        "price" : "650",
+                                        "quantity" : "50ml"
+                                    }]
+                                },
+                                {
+
+                                    "id": "2",
+                                    "price": "44",
+                                    "name": "Pancakes",
+									"calorie": "150",
+									"carb": "22",
+									"protein": "11",
+									"fat": "13.2",
+									"description": "Favourite Breakfast!!"
+                                },
+                                {
+
+                                    "id": "3",
+                                    "price": "78",
+                                    "name": "Eggs",
+									"calorie": "117",
+									"carb": "17.1",
+									"protein": "6.4",
+									"fat": "3.2",
+									"description": "High Protein Stuff!!"
+                                },
+                                {
+
+                                    "id": "4",
+                                    "price": "4",
+                                    "name": "Tomato",
+									"calorie": "10",
+									"carb": "55",
+									"protein": "2",
+									"fat": "6",
+                                    "description": "The Juicy Ones!!"
+                                },
+                                {
+
+                                    "id": "5",
+                                    "price": "51",
+                                    "name": "Broccoli",
+									"calorie": "30",
+									"carb": "12",
+									"protein": "8.8",
+									"fat": "3.7",
+									"description": "A better fibre alternative!!"									
+                                },
+                                {
+
+                                    "id": "6",
+                                    "price": "49",
+                                    "name": "Manchurin",
+									"calorie": "300",
+									"carb": "68.4",
+									"protein": "25.7",
+									"fat": "18.9",
+									"description": "A better fibre alternative!!"									
+                                },
+                                {
+
+                                    "id": "7",
+                                    "price": "19",
+                                    "name": "Noodles",
+									"calorie": "256",
+									"carb": "46",
+									"protein": "21.4",
+									"fat": "16.9",
+									"description": "A better fibre alternative!!"									
+                                },
+                                {
+
+                                    "id": "8",
+                                    "price": "80",
+                                    "name": "Vine Onion",
+									"calorie": "83",
+									"carb": "19.8",
+									"protein": "5.7",
+									"fat": "1.3",
+									"description": "A better fibre alternative!!"									
+                                }
+]

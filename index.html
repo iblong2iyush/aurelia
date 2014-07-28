@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--
+                   ___	  _	  _    ___ 	   ___     _		_	   ___
+                  /   \  | | | |  | _ \	  |  _|   | |	   | |    /	  \
+                  | - |  | |_| |  |   /	  ||-_    | |_	   | |    | - |
+                  |_|_|  \_____/  |_|_\	  |___|	  |___|	   |_|    |_|_|
+                _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
+                "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
+@iBlong2iYush
+-->
+<html ng-app="landApp">
+<head>
+    <meta charset="utf-8">
+    <title>aurelia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="description" content="Online Groceries Store">
+    <meta name="author" content="Ayush K. Singh">
+    <!-- Le styles -->
+    <link href="css/application.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/landing.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobile.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="images/ico" href="images/favicon.ico" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div class='pull-left' id='logo'><img alt="Instacart-logo-white" src="images/logo-white640x200.png"/></div>
+    <div class='pu-desktop pull-right'>
+        <ul class='nav nav-pills'>
+            <li class='active' id="sign-link">
+                <a class='call-to-action signup-link' href='javascript:void(0);' onclick="signup();">Sign Up</a>
+            </li>
+            <li class='' id="log-link">
+                <a class='login-link' href='javascript:void(0);' onclick="login();">Login</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class='panel hero' style="background-image: url('images/groceries.jpg'); background-position: center;">
+    <div class='row-fluid'>
+        <div class='span12 centered'>
+            <h1 style='margin-top: 35px;'>We Deliver Your Groceries.</h1>
+            <p class='lead'>
+                <span>BigBazaar, Suvidha and easyDay delivered to your door on the same day.</span>
+            </p>
+        </div>
+    </div>
+    <div class='signup-panel' style='margin-top: 20px'>
+        <div id='first-step'>
+            <h3>Enter Your Zip Code</h3>
+            <div style='margin-top: 10px; margin-bottom: 10px' data-ng-init="zipCheck = [{zipCode:'248001',area:'Rajpur Road'},{zipCode:'248002',area:'Race Course'},{zipCode:'248003',area:'Clement Town'},{zipCode:'248004',area:'Turner Road'},{zipCode:'248006',area:'Vasant Vihar'}]">
+                <form class='zip-check-form' id='step1' method='post' name="zipCodeFrm"  ng-controller="ZipCodeFrmCtrl" novalidate>
+                    <input ng-model="zipCode" ng-pattern="/^\d{6}$/" class='check-zip-code' id='zip-code' name='zip_code' placeholder='Zip Code' type='text' required>
+                    <button ng-disabled="!zipCode" onclick="signup()" class='btn btn-warning btn-large' id='zip-code-button'><span ng-hide="zipCode">Join Now</span> <span ng-show="zipCode" ng-cloak>Zip code is valid</span>                        <i class="fa fa-chevron-right"></i></button>
+                    <br />
+                    <br />
+                    <a href='javascript:void(0);' id="already">Already have an account?</a>
+                </form>
+            </div>
+        </div>
+        <div class='last-step clearfix hide' id="last-step">
+            <div class='facebook-signup'>
+                <a class='facebook-connect btn btn-info btn-large' href='store.html'>
+                    <i class='fa fa-facebook-square'></i>
+                    &nbsp;
+                    Sign in with Facebook
+                </a>
+            </div>
+            <div class='login-divider'>
+                or
+            </div>
+            <div class='email-signup'>
+                <form accept-charset="UTF-8" action="store.html" class="new_user" id="signup-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="kRHfu6q02YCZ2+4yDTinThN7lvD/9UeO8kqyy/PON6M=" /></div><input id="signup_user_remember_me" name="user[remember_me]" type="hidden" value="1" />
+                    <input id="signup_user_source" name="user[source]" type="hidden" value="web" />
+                    <input id="user_zip_code" name="user[zip_code]" type="hidden" />
+                    <input class="user_mp_distinct_id" id="signup_user_mp_distinct_id" name="user[mp_distinct_id]" type="hidden" />
+                    <input class="name first-name" id="signup_user_first_name" name="user[first_name]" placeholder="First name" required="required" size="30" style="margin-bottom: 4px" type="text" />
+                    <input class="name last-name" id="signup_user_last_name" name="user[last_name]" placeholder="Last name" size="30" style="margin-bottom: 4px" type="text" />
+                    <input id="signup_user_email" name="user[email]" placeholder="Email for receipts" required="required" size="30" style="margin-bottom: 4px" type="email" />
+                    <input id="user_password" name="user[password]" placeholder="Choose password" required="required" size="30" type="password" />
+                    <button class='btn btn-warning btn-large' type='submit'>
+                        Shop Now
+                        <i class='fa fa-chevron-right'></i>
+                    </button>
+                    <br/>
+                    <br/>
+                    <a href='javascript:void(0);' id="already1">Already have an account?</a>
+                </form>
+
+            </div>
+        </div>
+        <div class='login-step clearfix hide' id="login-step">
+            <div class='facebook-login'>
+                <a class='facebook-connect btn btn-info btn-large' href='store.html'>
+                    <i class='fa fa-facebook-square'></i>
+                    &nbsp;
+                    Login with Facebook
+                </a>
+            </div>
+            <div class='login-divider'>
+                or
+            </div>
+            <div class='email-login'>
+                <form accept-charset="UTF-8" action="store.html" class="new_user" id="login-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="kRHfu6q02YCZ2+4yDTinThN7lvD/9UeO8kqyy/PON6M=" /></div><input id="login_user_remember_me" name="user[remember_me]" type="hidden" value="1" />
+                    <input id="login_user_source" name="user[source]" type="hidden" value="web" />
+                    <input class="user_mp_distinct_id" id="login_user_mp_distinct_id" name="user[mp_distinct_id]" type="hidden" />
+                    <input id="login_user_email" name="user[email]" placeholder="Email" required="required" size="30" style="margin-bottom: 4px;" type="email" />
+                    <input id="user_password" name="user[password]" placeholder="Password" required="required" size="30" type="password" />
+                    <button class='btn btn-warning btn-large' type='submit'>Login!</button>
+                    <br/>
+                    <br/>
+                    <div class='centered'>
+                        <span class='hidden-desktop'>
+                            <a href='javascript:void(0);' id="signup" onclick="signup();">
+                                <i class='fa fa-angle-left'></i>
+                                Back to Signup
+                            </a>
+                        </span>
+                        <a href='javascript:void(0);' id="log">Forgot password?</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class='forgot-password-step clearfix hide' id="forgot-password">
+            <div class='email-login'>
+                <h3>Forgot your password?</h3>
+                <form accept-charset="UTF-8" action="/accounts/password" class="new_user" id="forgot-password-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="kRHfu6q02YCZ2+4yDTinThN7lvD/9UeO8kqyy/PON6M=" /></div><input id="forgot_password_user_email" name="user[email]" placeholder="Email" required="required" size="30" type="email" />
+                    <button class='btn btn-warning btn-large' type='submit'>
+                        <i class='fa fa-envelope'></i>
+                        Reset Password
+                    </button>
+                    <br/>
+                    <br/>
+                    <a href='javascript:void(0);' id="forgot">Back to Login</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='panel shorter dark' style="background-image: url('images/money.jpg');">
+    <div class='row-fluid'>
+        <div class='span6'></div>
+        <div class='span6'>
+            <div class='arrow-down'></div>
+            <h2>Save Money</h2>
+            <p class='lead'>
+                Forget clipping coupons! Try <img src="images/logo-black.png" alt="aurelia" width="100px">. It's cheaper than your local supermarket.
+            </p>
+            <button class='call-to-action btn btn-warning btn-large'>
+                Try Plus
+                <i class='fa fa-chevron-right'></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class='panel shorter' style="background-image: url('images/peaches.jpg');">
+    <div class='row-fluid'>
+        <div class='span6'>
+            <div class='arrow-down'></div>
+            <h2>Picky About Produce?</h2>
+            <p class='lead'>
+                <strong>So are we.</strong>
+                Your Personal Shopper knows how to find the perfect apple.
+            </p>
+            <button class='call-to-action cta-big btn btn-warning btn-large'>
+                Shop <img src="images/logo-black.png" alt="aurelia" width="100px">
+                <i class='fa fa-chevron-right'></i>
+                <div class='subtext'>Click here to get a delivery today</div>
+                <div class='free-badge'>
+                    1<sup>st</sup> Delivery Free!
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+<div class='pattern' style="background-image: url('images/gplaypattern.png');">
+    <div class='row-fluid'>
+        <div class='span12'>
+             <h2 style="color: dimgrey; font: 'sans-serif'; text-align: center">Browse over xx,xxx grocery items now!</h2>
+            <p>&nbsp;</p>
+                            <ul class='nav nav-pills pull-left'>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#/faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#/blog">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#/contact">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="#/privacy">Privacy</a>
+                                </li>
+                                <li>
+                                    <a href="#/terms">Terms</a>
+                                </li>
+                            </ul>
+
+                        <div class='pull-right'>
+                            <div class=''><p class="muted credit"><img src="images/logo-black.png" width="100px"> is a Project by <a href="http://facebook.com/iblong2iyush">Ayush K. Singh</a>.</p></div>
+                        </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+            setTimeout(function () { $('.hello-bar,.share-msg-banner').slideDown(); }, 600);
+            setTimeout(function () { $('.signup-panel').removeClass('slide-down'); }, 10);
+            setTimeout(function () { $('.free-badge').addClass('rotated'); }, 100);
+        });
+</script>
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- Le scripts -->
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".signup-panel #first-step #already").click(function(e) {
+            e.preventDefault();
+            $('#first-step').hide(200);
+            $('#login-step').show(200);
+            return false;
+        });
+        $(".signup-panel #forgot-password #forgot").click(function(e) {
+            e.preventDefault();
+            $('#login-step').show(200);$('#forgot-password').hide(200);
+            return false;
+        });
+        $(".signup-panel #login-step #log").click(function(e) {
+            e.preventDefault();
+            $('#forgot-password').show(200);$('#login-step').hide(200);
+            return false;
+        });
+        $(".signup-panel #last-step #signup").click(function(e) {
+            e.preventDefault();
+            $('#login-step,#forgot-password,#last-step').hide(200);$('#first-step').show(200);
+            return false;
+        });
+        $(".signup-panel #last-step #already1").click(function(e) {
+            e.preventDefault();
+            $('#first-step,#forgot-password,#last-step').hide(200);$('#login-step').show(200);
+            return false;
+        });
+    });
+    function signup() {$('#first-step,#login-step,#forgot-password').hide(200);$('#last-step').show(200);$('#sign-link').addClass("active");$("#log-link").removeClass("active");}
+    function already() {$('#first-step,#forgot-password,#last-step').hide(200);$('#login-step').show(200);}
+    function forgot() {$('#login-step,#first-step,#last-step').hide(200);$('#forgot-password').show(200);}
+    function login() {$('#forgot-password,#first-step,#last-step').hide(200);$('#login-step').show(200);$('#log-link').addClass("active");$("#sign-link").removeClass("active");}
+</script>
+</body>
+</html>
