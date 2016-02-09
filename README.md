@@ -9,10 +9,12 @@ Aurelia is made solely on the World’s Most Advanced Technology stack in a whol
 
 The Grocery Warehouse consists of 500 Products to Browse & Order at the Moment, alongside an Admin Panel to add/remove items in the Warehouse, an analytics platform to understand sales and inventory usage patterns and a Mobile Friendly Hybrid App to please the Customers visiting via their Mobile Devices. Aurelia address the common problem faced in a fast paced Society where people are finding it hard to make time for Daily Chores, so why not let the technology take care of that?
 
-Front End: HTML5, CSS3 and LESS
+Front End: HTML5, CSS3 from LESS
 
-Front End Javascript Framework: jQuery, BackboneJS, D3js, and AngularJS.
+Front End Javascript Framework: jQuery, BackboneJS, D3js, and AngularJS
 
 Back/Server End: NodeJS, Express, Mongoose exposing a  REST API
 
 Database: MongoDB
+
+The application has been updated and would soon be hosted on AWS after the database migration to Mongolab or MongoHQ.
